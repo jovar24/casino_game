@@ -25,12 +25,30 @@ def roullete():
         print("you won!!!")
         money_in_wallet.append(int(minus))
         print (f"your current balance is ${float(sum(money_in_wallet)):.2f}")
+        retry_win()
+        
+    def retry_win():
+        decision = input("great job if you would like to bet again type \"again\" if you would like to cash out type \"done\" ")
+        if decision == "again":
+            bet()
+        elif decision == "done":
+            cashout()    
 
     def you_lose():
         print("you lost :(")
         money_in_wallet.append(int(minus)) 
-        print (f"your current balance is ${float(sum(-money_in_wallet)):.2f}")            
-
+        print (f"your current balance is ${float(sum(-money_in_wallet)):.2f}")
+        retry_lose()
+    
+    def retry_lose():
+          decision = input("looks like you lost if you would like to bet again type \"again\" if you would like to cash out type \"done\" ")
+        if decision == "again":
+            bet()
+        elif decision == "done":
+            cashout()    
+    def cashout():
+        print(f"your current balance is ${float(sum(money_in_wallet)):.2f}") 
+        quit
     
 
         

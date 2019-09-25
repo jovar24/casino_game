@@ -7,6 +7,7 @@ def roullete():
         print (f"your current balance is ${float(sum(money_in_wallet)):.2f}")
         offer = input("what is the amount you would like to bet?:  ")
         bet.append(int(offer))
+        print(f"there is ${bet} on the line!!")
         
 
     def guess():
@@ -20,6 +21,9 @@ def roullete():
         elif random_num != choice:
             print(f"{random_num}")
             you_lose()
+        elif choice > 11:
+            print("that is an invalid choice please try choosing a number between 0 and 11")
+            guess()    
 
     def you_won():
         print("you won!!!")
